@@ -4,6 +4,7 @@ ARG GOSEC_VER=v2.9.5
 FROM golang:${GO_VER}
 
 RUN go install github.com/goreleaser/goreleaser@latest
+RUN go install github.com/securego/gosec/v2/cmd/gosec@latest
 
 RUN apt-get update && apt-get install -y \
     lsb-release \
