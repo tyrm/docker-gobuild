@@ -25,6 +25,8 @@ RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/d
     postgresql-client-14 \
   && rm -rf /var/lib/apt/lists/*
 
+RUN npm i minify -g
+
 RUN npm install snyk@latest -g
 
 RUN curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s -- -b $(go env GOPATH)/bin ${GOSEC_VER}
