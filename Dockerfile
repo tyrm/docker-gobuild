@@ -22,7 +22,7 @@ RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/d
     docker-ce-cli \
     docker-compose \
     git \
-    nc \
+    netcat \
     npm \
     postgresql-client-14 \
   && rm -rf /var/lib/apt/lists/*
