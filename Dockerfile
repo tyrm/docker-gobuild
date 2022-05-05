@@ -5,6 +5,7 @@ FROM golang:${GO_VER}
 
 RUN go install github.com/goreleaser/goreleaser@latest
 RUN go install github.com/securego/gosec/v2/cmd/gosec@latest
+RUN go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 
 RUN apt-get update && apt-get install -y \
     lsb-release \
@@ -21,6 +22,7 @@ RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/d
     docker-ce-cli \
     docker-compose \
     git \
+    nc \
     npm \
     postgresql-client-14 \
   && rm -rf /var/lib/apt/lists/*
